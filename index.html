@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment 2 HW</title>
+  <!-- Import Vega & Vega-Lite -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <!-- Import vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap" rel="stylesheet">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- custom CSS -->
+  <style>
+    *{
+      font-family: 'Roboto', sans-serif;
+    }
+    h1{
+      font-weight: 400;
+    }
+     body{
+       background-color:lightgray;
+     }
+     .page{
+       width: 1300px;    
+       background-color: white;   
+       margin: auto;
+       padding: 50px;
+       padding-top: 35px;
+    }
+    .vis-container{
+      width: 100%;
+    }
+    .description h1{
+      margin-top:0px;
+    }
+    .description h2{
+      color: #737373;
+    }
+    .description-right {
+      padding-left: 20px;
+    }
+    .description-left{
+      padding-right: 20px;
+    }
+    .pure-g{
+      margin-bottom: 25px;
+    }
+    p{
+     font-size: 18px;
+     font-weight: 300;
+    }
+    .small-font{
+      font-size: 13px;
+      font-weight: 300;
+    } 
+    .pure-a{
+        margin-bottom: 25px;
+        background-color: #ffb3b3;
+    }
+    h1.a {
+      font-size: 70px;
+      color:  black;
+      font-weight: 1000;
+    }
+    h2.b {
+      font-size: 33px;
+    }
+    h2.c{
+      color: 8b0000;
+      font-weight: 300;
+    } 
+    h2.d {
+      color: #b30000;
+    }
+    h3.c{
+      font-weight: 1000px;
+    }    
+
+
+  </style>
+</head>
+
+
+<body>
+ <div class="page" >
+
+
+  <!-- MAIN TITLE -->
+  <div>
+    <div class="pure-u-1-1">
+      <h1 class="a" style="text-align:center">Energy Consumption Around The Globe.</h1>
+      <h3 style="text-align:center">To be more energy efficient, reducing the amount of energy we consume is an essential step. Consuming less oil decreases the need for our energy supplies, such as fossil fuels, which is critical for a safer and brighter future.</h3>
+      <p style="text-align:center" class="c">This visualisation is based on the dataset from "Our World In Data"</p>
+      <br>
+        <br>
+        <br>
+    </div>
+  </div>
+
+  
+
+
+
+  <!-- 1. ENERGY CONSUMPTION -->
+  <div class=pure-a>
+    <div class="pure-u-1-1">
+      <h2 style="text-align:center" class="b">Energy Consumption Per Capita (KWh)</h2>
+  
+    </div>
+  </div>
+  <!-- end pure grid group -->
+  
+  <!-- pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-1-4">
+      <div class="description description-left">
+        <br>
+        <p> Here, we see the energy use per person in 2019. This is inclusive of all types of energy (electricity plus transport and heating).
+          An interesting point to note is that global average per capita energy consumption has been on a consistent rise; average 
+          consumption has increased by approximately 45%. <br><br>
+
+          What is also evident from the data shown is that the average US citizen consumes more than 10 times the energy of the average 
+          Indian, 4-5 times that of a Brazilian, and three times more than China. And, the gulf between these and very low-income nations
+          is even greater!
+       </p>
+      </div>
+    </div>
+    <div class="pure-u-3-4">
+      <br>
+      <br>
+      <br>
+      <br>
+      <div id="vis1" class="vis-container"></div>
+    </div>
+  </div>
+  <!-- end pure grid group -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- 4. ENERGY CONSUMPTION BY SOURCE -->
+    <!-- pure grid group -->
+    <div class="pure-a">
+      <div class="pure-u-1-1">
+      <h2 style="text-align:center" class="b">Energy consumption by source</h2>
+      </div>
+  </div>
+  <!-- pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-3-8">
+      <div class="description description-left">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        <h2 class = "d" >Oil will run out in 53 years...!</h2> 
+        <p> Oil will run out in 53 years at the existing output rates, natural gas in 54, and coal in 110. 
+          This is expressed in the International Energy Agency's 2015 World Energy Outlook report, which estimated that fossil 
+          fuels will account for 59% of global primary energy demand in 2040, despite ambitious climate change policies.
+        </p>
+        <br>
+      </div>
+    </div>
+    <div class="pure-u-5-8">
+      <div id="vis4" class="vis-container"></div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- 6. SANKEYYYYY -->
+ <!-- pure grid group -->
+ <div class="pure-a">
+  <div class="pure-u-1-1">
+  <h2 style="text-align:center" class="b">Source of Electricity Production</h2>
+  </div>
+</div>
+<!-- pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-3-8">
+      <br>
+      <br>
+      <br>
+      <br>
+      <h2 class = "d" >Fossil Fuels will be depleted by 2060.</h2> 
+      <div class="description description-left">
+        <p>In this Sankey Diagram. we visualise the source of Electricity production for few countries. </p>
+        <p>In order to reduce our worldwide greenhouse gas emissions, the world must move from a fossil-fuel-dominated energy system to a low-carbon one (this is what most countries have set long-term aims to do under the Paris climate agreement).</p>
+        <p>However, fossil fuels remain to be the main source of electricity production. A variety of air emissions that are detrimental to both the atmosphere and public health are released from burning fossil fuels. 
+          Emissions of sulphur dioxide ( SO2), mostly the product of coal burning, lead to acid rain and to the formation of toxic particulate matter.</p>
+      </div>
+      
+    </div>
+    <div class="pure-u-5-8">
+      <h3 style="text-align:center">Sankey Diagram showing Sources of Electricity Production (2014)</h3>
+      <div id="vis6" class="vis-container"></div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- 7. AREA CHART -->
+    <!-- pure grid group -->
+    <div class="pure-a">
+      <div class="pure-u-1-1">
+      <h2 style="text-align:center" class="b">Investment in renewable technologies</h2>
+      </div>
+  </div>
+  <!-- pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-3-8">
+      <div class="description description-left">
+        
+        <h2 class = "d" >3400% Increase for China in investment</h2> 
+        <p> It would take substantial financial investment to move our energy structures away from fossil fuels toward sustainable energies. 
+          But how much do we actually spend in this sector, and how do we spread this funding around the world?
+        </p>
+        <p> In this graph, we see global investments in renewable technologies from 2004 to 2015 (in billion USD per year). 
+          The world invested 47 billion USD in 2004. By 2015, this had grown to USD 286 billion, a growth of over 600 percent.
+          China's rise was the fastest, growing from USD 3 billion in 2004 to USD 103 billion by 2015 (an increase of 3400 %). 
+          China is also the biggest single clean energy donor, spending about the same as the United States, Europe and India combined.
+        </p>
+        <br>
+      </div>
+    </div>
+    <div class="pure-u-5-8">
+      <h3 style="text-align:center">Investment in Renewable Energy in US dollars By Region</h3>
+      <div id="vis7" class="vis-container"></div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- 2. Co2 EMISSIONS AROUND THE GLOBE -->
+    <!-- pure grid group -->
+    <div class="pure-a">
+      <div class="pure-u-1-1">
+      <h2 style="text-align:center" class="b">Co2 Emissions Around The Globe</h2>
+      </div>
+  </div>
+  <!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="pure-g">
+      <div class="pure-u-3-8">
+        <div class="description description-left">
+         
+          <br>
+          <h2 class = "d" >Pollution levels are at an all time-high!</h2> 
+          <br>
+          <br>
+          <p> How have global emissions of carbon dioxide (CO2) changed over time as a result of high energy and electricity production? </p>
+          <br>
+          <p> From the shown line chart, it is quite clear that the Co2 emissions have been on a steady rise. 
+            The world has seen a very short reduction is Co2 emissions few times since 1970, but there has not been a single reduction 
+            in nearly 12 years!! The reason of this dramatic increase is simply because of the fossil fuels that are being burnt around 
+            the world for energy.</p>
+          <br>
+          <br>
+        </div>
+      </div>
+      <div class="pure-u-5-8">
+        <div id="vis2" class="vis-container" class="description description-right"></div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 3. GLOBAL ENERGY TRADE -->
+    <!-- pure grid group -->
+    <div class="pure-a">
+        <div class="pure-u-1-1">
+        <h2 style="text-align:center" class="b">Global energy trade - Import and Export</h2>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+     <!-- pure grid group -->
+     <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="description description-left">
+            <br>
+            <br>
+          <p> If you are a resource-rich country, but you still have high domestic demand levels, you can have little resources 
+            left to export. Similarly, if a nation has low oil demand levels, it can also be a net energy exporter, despite having 
+            relatively low levels of natural resources.  </p>
+            <br>
+          <p>As a percentage of domestic energy consumption, we have calculated energy imports and exports here, where a positive
+             percentage indicates that a country or nation is a net energy importer and a negative percentage indicates that a net
+              energy exporter is a net energy importer.</p>
+
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="vis3" class="vis-container"></div>
+      </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- 5. GDP VS ENERGY -->
+ <!-- pure grid group -->
+ <div class="pure-a">
+    <div class="pure-u-1-1">
+    <h2 style="text-align:center" class="b">Energy Consumption Vs GDP Per Capita</h2>
+    </div>
+</div>
+<!-- pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-3-8">
+        <br>
+        <br>
+        <br>
+        <h2 class = "d" >USA has the highest Energy use Per Capita.</h2> 
+        <div class="description description-left">
+          <p>This plot on the right shows us the comparison between energy consumption and GDP per capita.
+            GDP is a measure of a country's economic output that accounts for its population. 
+          </p>
+          <p>Here, we see that United State has the highest energy consumption, 
+            maintaining a healthy balance between the two. Countries such as India 
+            and China fall behind due to it's large population. IThe trend seems to be that,
+            typically the higher a country’s average income, the more energy it consumes.
+          </p>
+        </div>
+        
+      </div>
+      <div class="pure-u-5-8">
+        <div id="vis5" class="vis-container"></div>
+      </div>
+    </div>
+
+
+
+
+  
+
+  </div> <!-- end page -->
+   
+<script type="text/javascript">
+  var specVis1 = "https://raw.githubusercontent.com/azaf0003/3179_AS2/main/MAP_EnergyCapita.json";
+  var specVis2 = "https://raw.githubusercontent.com/azaf0003/FIT3179HW9/main/Co2.json";
+  var specVis3 = "https://raw.githubusercontent.com/azaf0003/3179_AS2/main/HorizontalBarChart-Energy.json";
+  var specVis4 = "https://raw.githubusercontent.com/azaf0003/3179_AS2/main/LineChart1-Energy.json";
+  var specVis5 = "https://raw.githubusercontent.com/azaf0003/3179_AS2/main/bubble.json";
+  var specVis6 = "https://raw.githubusercontent.com/azaf0003/3179_AS2/main/Sankey%20Json";
+  var specVis7 = "https://raw.githubusercontent.com/azaf0003/3179_AS2/main/Area2Json";
+  
+
+  vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis6', specVis6, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis7', specVis7, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+</body>
+</html>
